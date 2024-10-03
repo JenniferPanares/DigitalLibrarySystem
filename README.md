@@ -27,8 +27,7 @@ With growing demand for accessible digital resources, traditional libraries stru
 #### Key Features:
     1. Search and Browse: Easily find eBooks by title, author, genre, or keywords.
     2. User Profiles: Create accounts to manage reading lists, and track progress.
-    3. Reviews and Feedback: Users can rate and review books, providing valuable feedback and helping others discover
-       great content.
+    3. Reviews and Feedback: Users can rate and review books, providing valuable feedback and helping others discover great content.
     4. Payments: Securely purchase or subscribe to premium content directly through the platform.
     5. Analytics: Institutions can monitor usage and reading trends to optimize resource allocation.
     6. Responsive Design: Seamless access across desktops, tablets, and smartphones, with a user-friendly interface.
