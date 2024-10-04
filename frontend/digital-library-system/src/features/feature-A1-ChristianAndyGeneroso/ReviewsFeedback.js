@@ -61,7 +61,6 @@ const ReviewFeedback = () => {
     setHasRated(true);
     setModal(!modal);
 
-    console.log(userListData);
     return
   }
 
