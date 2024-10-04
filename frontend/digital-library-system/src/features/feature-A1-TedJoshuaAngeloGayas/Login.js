@@ -11,7 +11,23 @@ const Login = () => {
   };
 
   const handleSocialLogin = (platform) => {
-    alert(`Logging in with ${platform}...`);
+    let loginUrl = '';
+
+    switch (platform) {
+      case 'Facebook':
+        loginUrl = 'https://www.facebook.com/login';
+        break;
+      case 'Gmail':
+        loginUrl = 'https://accounts.google.com/signin';
+        break;
+      case 'Twitter':
+        loginUrl = 'https://twitter.com/login';
+        break;
+      default:
+        break;
+    }
+
+    window.open(loginUrl, '_blank', 'width=600,height=600');
   };
 
   const handleRegister = () => {
