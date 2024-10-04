@@ -1,6 +1,6 @@
 .sidebar {
   width: 200px;
-  background-color: #CA955C;
+  background-color: #9F26A2;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   height: 100vh;
@@ -9,7 +9,6 @@
 
 .main-content {
   margin-left: 240px; /* Space for the sidebar */
-  padding: 0px 20px;
   width: calc(100% - 240px);
 }
 
@@ -33,12 +32,12 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #000000;
-  background-color: #EDDFB3;
+  background-color: #FFC000;
   border-radius: 10px;
 }
 
 nav ul li a.active-link {
-  background-color: #876445;
+  background-color: #641866;
   color: #FFFFFF;
   border-radius: 10px;
 }
