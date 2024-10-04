@@ -1,8 +1,9 @@
 import './App.css';
-import { BrowserRouter as Router, NavLink, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
 import HomePage from './features/HomePage';
 import UserProfile from './features/feature-A1-RobertLouizVictoriano/UserProfile';
 import ReviewFeedback from './features/feature-A1-ChristianAndyGeneroso/ReviewsFeedback';
+import Login from './features/feature-A1-TedJoshuaAngeloGayas/Login'; 
 
 function App() {
   return (
@@ -42,6 +43,16 @@ function App() {
                 </NavLink>
               </li>
 
+              <li>
+                <NavLink 
+                  to="/login" 
+                  end 
+                  className={({ isActive }) => (isActive ? 'active-link' : '')}
+                >
+                  Login {/* Added a navigation link for the Login page */}
+                </NavLink>
+              </li>
+
             </ul>
           </nav>
         </div>
@@ -51,6 +62,7 @@ function App() {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/view-UserProfile" element={<UserProfile/>}/>
             <Route path="/view-ReviewFeedback" element={<ReviewFeedback/>}/>
+            <Route path="/login" element={<Login />} /> {/* Added route for Login */}
           </Routes>
         </div>
       </div>
