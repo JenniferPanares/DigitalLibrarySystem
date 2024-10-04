@@ -3,6 +3,7 @@ import { BrowserRouter as Router, NavLink, Link, Route, Routes } from 'react-rou
 import HomePage from './features/HomePage';
 import UserProfile from './features/feature-A1-RobertLouizVictoriano/UserProfile';
 import ReviewFeedback from './features/feature-A1-ChristianAndyGeneroso/ReviewsFeedback';
+import Login from './features/feature-A1-TedJoshuaAngeloGayas/Login';
 
 function App() {
   return (
