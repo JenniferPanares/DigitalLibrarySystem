@@ -207,12 +207,12 @@ const ReviewFeedback = () => {
           )}
         </>)}
         {hasRated && ( <>
-          <p><button onClick={toggleAddRating}>Edit Rating</button></p>
+          <p><button className='rating-config-btn' onClick={toggleAddRating}>Edit Rating</button></p>
           {modal && (
             <div className="modal">
               <div onClick={toggleAddRating} className="overlay"></div>
               <div className="modal-content">
-                <button className="close-modal rating-config-btn" onClick={toggleAddRating}>&times;</button>
+                <button className="close-modal" onClick={toggleAddRating}>&times;</button>
                 <h2>Edit Your Rating</h2>
                 <Rating 
                     initialRating={userRating} 
