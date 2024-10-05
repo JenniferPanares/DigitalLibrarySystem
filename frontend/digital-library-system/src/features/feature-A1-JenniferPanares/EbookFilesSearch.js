@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ebookFiles.css';  
+import './EbookFilesSearch.css';  
 import ebookLogo from './images/ebook_logo.png';  
 import digitalCover from './images/Digital_Marketing_cover.jpg';  
 import ITcover from './images/IT.jpg';  
@@ -109,49 +109,23 @@ const App = () => {
       
       {/* Navbar Section */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    <img src={ebookLogo} alt="Ebooks Hub Logo" className="logo" /> 
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
+      <div className="container-fluid">
+        <img src={ebookLogo} alt="Ebooks Hub Logo" className="logo" />  
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-    <div className="collapse navbar-collapse" id="navbarNav">
-      {/* Left-aligned links */}
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">User Profile</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Reviews and Feedback</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Ebooks</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Payments</a>
-        </li>
-      </ul>
-
-      {/* Add ms-auto to push the Login link to the right */}
-      <ul className="navbar-nav ms-auto">
-        <li className="nav-item">
-          <a className="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    
+      </div>
+    </nav>
 
 
       
