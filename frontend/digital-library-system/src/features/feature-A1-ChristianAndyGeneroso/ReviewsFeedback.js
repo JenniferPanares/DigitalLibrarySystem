@@ -1,12 +1,12 @@
 import './ReviewsFeedback.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Rating from 'react-rating';
 import { AiFillLike, AiOutlineLike } from 'react-icons/ai';
 import { IoStar, IoStarOutline } from 'react-icons/io5';
 import { VscBlank } from "react-icons/vsc";
 
 const ReviewFeedback = () => {
-  const [ratingData, setRatingData] = useState([
+  const [ratingData, setRatingData] = useState([  //dummy data for feature showcase
     { id: 1, user: 'Anton Chigurh', rating: 3.5, date: '2024-04-25',
       review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare enim diam, eget iaculis felis molestie ac.',
       likes: 2442, liked: false
@@ -39,16 +39,22 @@ const ReviewFeedback = () => {
   ]);
     //ratings and reviews will be separate tables with the actual database
   const [displayData, setDisplayData] = useState([...ratingData].sort((a, b) => new Date(b.date) - new Date(a.date)));
+    //the data for display that is based on the ratingData array, shows the newest by date
   const [selectedOption, setSelectedOption] = useState("newest");
+    //for sorting of the list
   const [modal, setModal] = useState(false);
+    //boolean for the add or edit rating modal
 
   const [maxRatingId, setMaxRatingId] = useState(Math.max(...ratingData.map(review => review.id)));
   const [newRatingId, setNewRatingId] = useState(maxRatingId + 1);
+    //for getting the new unique key for the rating or review
   const [hasRated, setHasRated] = useState(false);
+  const [listUpdate, setListUpdate] = useState(false);
+    //booleans for any update on the list
   const [userRating, setUserRating] = useState(1);
   const [userReview, setUserReview] = useState("");
-  const [userListData, setUserListData] = useState([]);
-  const loggedUser = "Tarnished";
+
+  const loggedUser = "Tarnished"; //the dummy user for the adding and editing rating feature
 
   const addRating = () => {
     const ratingNum = parseFloat(userRating);
@@ -57,11 +63,10 @@ const ReviewFeedback = () => {
     }
 
     setRatingData([...ratingData, newListData]);
-    setUserListData([...userListData, newListData]);
-    setHasRated(true);
+    setHasRated(!hasRated);
     setModal(!modal);
+    setListUpdate(!listUpdate);
 
-    console.log(userListData);
     return
   }
 
@@ -78,6 +83,7 @@ const ReviewFeedback = () => {
 
     setRatingData(newList);
     setModal(!modal);
+    setListUpdate(!listUpdate);
   }
 
   const deleteRating = (id) => {
@@ -86,7 +92,8 @@ const ReviewFeedback = () => {
     setUserRating(1);
     setUserReview("");
     setModal(!modal);
-    setHasRated(false);
+    setHasRated(!hasRated);
+    setListUpdate(!listUpdate);
 
     return;
   }
@@ -98,7 +105,7 @@ const ReviewFeedback = () => {
     const year = today.getFullYear();
     return `${year}-${month}-${day}`
   }
-
+    //function to get the current date and format it to yyyy-mm-dd
   const [currentDate, setCurrentDate] = useState(getCurrentDate());
 
   const handleSortBy = (e) => {
@@ -151,15 +158,23 @@ const ReviewFeedback = () => {
     setModal(!modal)
   }
 
-  if(modal) {
+  if(modal) { //is connected to the css, disables the scrollbar when the modal is up
     document.body.classList.add('active-modal')
   } else {
     document.body.classList.remove('active-modal')
   }
 
+  useEffect(() => { //sets the display list to newest on each add, edit or delete rating
+    if (listUpdate) {
+    setDisplayData([...ratingData].sort((a, b) => new Date(b.date) - new Date(a.date)));
+    setSelectedOption("newest")
+    setListUpdate(!listUpdate)
+    }
+  }, [ratingData])
+
   return (
     <div className="App">
-      <div className="flex-item details">
+      <div className="flex-item details"> {/* shows book details, the average rating, and the add or edit rating button */}
         <img src="images/placeholder-book.png" alt="placeholder-cover" className="bookCover"/>
         <h2>Placeholder Book</h2>
         <h4>John D. Author</h4>
@@ -172,9 +187,9 @@ const ReviewFeedback = () => {
           fullSymbol={<IoStar />}
           readonly
         />
-        {!hasRated && ( <>
+        {!hasRated && ( <>  {/* if hasRated is still false, shows Add Rating button */}
           <p><button className='rating-config-btn' onClick={toggleAddRating}>Add Rating</button></p>
-          {modal && (
+          {modal && ( //shows the modal
             <div className="modal">
               <div onClick={toggleAddRating} className="overlay"></div>
               <div className="modal-content">
@@ -207,12 +222,12 @@ const ReviewFeedback = () => {
           )}
         </>)}
         {hasRated && ( <>
-          <p><button onClick={toggleAddRating}>Edit Rating</button></p>
+          <p><button className='rating-config-btn' onClick={toggleAddRating}>Edit Rating</button></p>
           {modal && (
             <div className="modal">
               <div onClick={toggleAddRating} className="overlay"></div>
               <div className="modal-content">
-                <button className="close-modal rating-config-btn" onClick={toggleAddRating}>&times;</button>
+                <button className="close-modal" onClick={toggleAddRating}>&times;</button>
                 <h2>Edit Your Rating</h2>
                 <Rating 
                     initialRating={userRating} 
@@ -243,7 +258,7 @@ const ReviewFeedback = () => {
         </>)}
       </div>
 
-      <div className="flex-item reviews">
+      <div className="flex-item reviews"> {/* shows the review list */}
         <div>
           <h1>User Reviews</h1>
           <span>Sort reviews by: </span>
@@ -258,7 +273,7 @@ const ReviewFeedback = () => {
         <div>
           <ul>
             {displayData.map(rating => (
-              rating.review && (
+              rating.review && ( //shows only ratings from the list with reviews
               <li  key={rating.id}>
                 <span>
                   <h3>Review By {rating.user}</h3>
