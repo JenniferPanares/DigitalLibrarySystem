@@ -1,0 +1,191 @@
+/* General app styles */
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Header */
+  h1 {
+    color: black; 
+    text-align: center;
+    margin-top: 2%; 
+    margin-bottom: 2%;  
+    font-size: 180%;
+    padding: .5%; 
+  
+  }
+  
+  
+  /* Ebook list container */
+  .ebook-list {
+    margin-top: 20px;
+  }
+  
+  /* Ebook card styling */
+  .ebook-item {
+    border: 5px solid #e606ee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(212, 199, 12, 0.1); 
+    background-color: #E1DFDF;
+    transition: transform 0.3s ease;
+  }
+  
+  .ebook-item:hover {
+    transform: translateY(-5px); 
+  }
+  
+  /* Input styling */
+  input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    display: block;
+    border-radius: 30px;  
+    border: 5px solid #4a148c;  
+  }
+  
+  input::placeholder {
+    color: #ba68c8;  
+  }
+  
+  /* Ebook cover image */
+  .card-img-top {
+    border-radius: 10px 10px 0 0; 
+    height: 300px;
+    object-fit: cover; 
+    box-shadow: 0 5px 10px #AC2AB0;
+  }
+  
+  /* Ebook title */
+  .card-title {
+    color: #4a148c;  
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Ebook metadata (author, genre, etc.) */
+  .card-text {
+    color: #757575;  
+    margin-bottom: 10px;
+  }
+  
+  /* Button */
+  button {
+    background-color: #4a148c;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #6a1b9a;  
+  }
+  
+  /* No eBooks found message */
+  .text-center {
+    color: black;  
+    font-size: 200%;
+  }
+  
+  .logo {
+    width: 150px;  
+    height: auto;
+    margin-bottom: 20px;
+    text-align: left;
+    animation: bounce 2s infinite; 
+  }
+  
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); 
+    }
+    50% {
+      transform: translateY(-20px); 
+    }
+  }
+  
+  
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    z-index: 9999;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  /* Enlarged image */
+  .enlarged-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: contain;
+  }
+  
+  /* Cursor pointer for clickable images */
+  .clickable-image {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .clickable-image:hover {
+    transform: scale(1.05); 
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 10000; 
+  }
+  
+  .close-button:hover {
+    color: #ffd900; 
+  }
+  
+  /* Star rating styling */
+  .star {
+    color: #d3d3d3; 
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  .filled-star {
+    color: #f39c12; 
+  }
+  
+  
+  
