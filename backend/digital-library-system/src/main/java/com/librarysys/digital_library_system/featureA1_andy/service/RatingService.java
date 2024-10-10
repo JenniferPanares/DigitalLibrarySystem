@@ -44,11 +44,14 @@ public class RatingService {
         Rating existingRating = ratingRepository.findById(id)
                 .orElseThrow(() -> CustomException.ratingIdNotFound(id));
 
-        if(existingRating.getUserId() != (rating.getUserId())) {
+        if(rating.getUserId() != null && !rating.getUserId().equals(existingRating.getUserId())) {
             throw CustomException.immutableUserId();
         }
-        if(existingRating.getBookId() != (rating.getBookId())) {
+        if(rating.getBookId() != null && !rating.getBookId().equals(existingRating.getBookId())) {
             throw CustomException.immutableBookId();
+        }
+        if (rating.getRating() < 0.5 || rating.getRating() > 5) {
+            throw CustomException.invalidRating(rating.getRating());
         }
 
         existingRating.setRating(rating.getRating());

@@ -9,15 +9,16 @@ import java.time.LocalDate;
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ratingId;
+    private Integer ratingId;
 
-    @Column (updatable = false)
-    private int userId;
+    @Column (updatable = false, nullable = false)
+    private Integer userId;
 
-    @Column (updatable = false)
-    private int bookId;
+    @Column (updatable = false, nullable = false)
+    private Integer bookId;
 
-    private float rating;
+    @Column (nullable = false)
+    private Float rating;
 
     @Column(name="date_posted", nullable = false)
     private LocalDate date;
