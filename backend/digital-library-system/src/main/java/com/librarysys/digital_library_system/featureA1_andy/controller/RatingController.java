@@ -1,7 +1,7 @@
-package com.librarysys.digital_library_system.feature_andy.controller;
+package com.librarysys.digital_library_system.featureA1_andy.controller;
 
-import com.librarysys.digital_library_system.feature_andy.models.Rating;
-import com.librarysys.digital_library_system.feature_andy.service.RatingService;
+import com.librarysys.digital_library_system.featureA1_andy.models.Rating;
+import com.librarysys.digital_library_system.featureA1_andy.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

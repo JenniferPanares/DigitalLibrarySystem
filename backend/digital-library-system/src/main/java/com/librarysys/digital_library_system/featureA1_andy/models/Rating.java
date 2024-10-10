@@ -1,4 +1,4 @@
-package com.librarysys.digital_library_system.feature_andy.models;
+package com.librarysys.digital_library_system.featureA1_andy.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,9 +10,15 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ratingId;
+
+    @Column (updatable = false)
     private int userId;
+
+    @Column (updatable = false)
     private int bookId;
+
     private float rating;
-    @Column(name="date_posted", updatable = false, nullable = false)
+
+    @Column(name="date_posted", nullable = false)
     private LocalDate date;
 }
