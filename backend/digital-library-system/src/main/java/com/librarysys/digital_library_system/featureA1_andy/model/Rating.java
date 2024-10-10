@@ -1,4 +1,4 @@
-package com.librarysys.digital_library_system.featureA1_andy.models;
+package com.librarysys.digital_library_system.featureA1_andy.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

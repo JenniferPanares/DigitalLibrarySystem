@@ -2,7 +2,7 @@ package com.librarysys.digital_library_system.featureA1_andy.service;
 
 
 import com.librarysys.digital_library_system.featureA1_andy.advice.CustomException;
-import com.librarysys.digital_library_system.featureA1_andy.models.Rating;
+import com.librarysys.digital_library_system.featureA1_andy.model.Rating;
 import com.librarysys.digital_library_system.featureA1_andy.repository.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
