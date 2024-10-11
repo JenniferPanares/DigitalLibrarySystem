@@ -1,12 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.BookService;
+import com.example.demo.Service.BookService;
+import com.example.demo.Model.Book;  // Use the correct Book class
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.awt.print.Book;
 
 @SpringBootApplication
 public class BookBrowser implements CommandLineRunner {

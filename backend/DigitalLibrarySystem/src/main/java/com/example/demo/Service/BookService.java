@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.Service;
 
+import com.example.demo.Model.Book;
+import com.example.demo.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,18 +26,18 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book updateBook(int id, Book newBookData) {
+    public Book updateBook(int id, Book book) {
         Optional<Book> existingBook = bookRepository.findById(id);
         if (existingBook.isPresent()) {
-            Book book = existingBook.get();
-            book.setTitle(newBookData.getTitle());
-            book.setAuthor(newBookData.getAuthor());
-            book.setGenre(newBookData.getGenre());
-            book.setPublicationYear(newBookData.getPublicationYear());
-            book.setRating(newBookData.getRating());
-            return bookRepository.save(book);
+            Book updatedBook = existingBook.get();
+            updatedBook.setTitle(book.getTitle());
+            updatedBook.setAuthor(book.getAuthor());
+            updatedBook.setPublicationYear(book.getPublicationYear());
+            updatedBook.setGenre(book.getGenre());
+            updatedBook.setRating(book.getRating());
+            return bookRepository.save(updatedBook);
         }
-        return null;  // Handle error case (e.g., throw custom exception)
+        return null;
     }
 
     public void deleteBook(int id) {

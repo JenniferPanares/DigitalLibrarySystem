@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.BookService;
+import com.example.demo.Service.BookService;
 import com.example.demo.Model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
