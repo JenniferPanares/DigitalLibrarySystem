@@ -1,3 +1,5 @@
+### This Project has been moved to a different repository: https://github.com/AndyGen-CPRO/DigitalLibrarySystem
+
 # Digtal Library System
 ### A Modern Approach to Knowledge Learning and Streamlined Access to Avid Readers
 
